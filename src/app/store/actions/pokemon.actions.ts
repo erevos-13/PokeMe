@@ -5,15 +5,15 @@ export const GET_POKEMON_SUCCESS = "GET_POKEMON_SUCCESS";
 export const GET_POKEMON_FAIL = "GET_POKEMON_FAIL";''
 
 export const getPokemons = createAction(
-    '[POKEMON Page] get pokemons'
+    GET_POKEMON_START
 );
 
 export const getPokemonsSuccess = createAction(
-    '[POKEMON Page] get pokemons success',
+    GET_POKEMON_SUCCESS,
     props<{payload: any[]}>()
 );
 
 export const getPokemonsFail = createAction(
-    '[POKEMON Page] get pokemons fail',
+    GET_POKEMON_FAIL,
     props<{error: any}>()
 );

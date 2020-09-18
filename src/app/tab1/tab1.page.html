@@ -12,6 +12,17 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div>
+    test
+  </div>
+  <div  *ngIf="pokemen$ | async as details">
+    <li *ngFor="let item of details; let i = index">
+      <ul>{{item.name}}</ul>
+      
+    </li>
+  </div>
+ 
+  <div>
+    test end
+  </div>
 </ion-content>

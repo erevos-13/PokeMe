@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { getPokemons, GET_POKEMON_SUCCESS } from '../store/actions/pokemon.actions';
-import { selectPokemon } from '../store/selector/pokemon.selector';
+import { selectAllPokemon, selectPokemonEntities, selectPokemonIds } from '../store/selector/pokemon.selector';
 
 @Component({
   selector: 'app-tab1',
@@ -10,6 +10,8 @@ import { selectPokemon } from '../store/selector/pokemon.selector';
 })
 export class Tab1Page implements OnInit {
 
+  pokemen$
+  pokemenIds$
   constructor(
     private store: Store
   ) {
@@ -18,8 +20,7 @@ export class Tab1Page implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(getPokemons());
-    const pokemen_ = this.store.pipe(select(selectPokemon));
-    console.log('[select pokemon]', pokemen_);
+    this.pokemen$ = this.store.pipe(select(selectAllPokemon))
   }
 
 }
