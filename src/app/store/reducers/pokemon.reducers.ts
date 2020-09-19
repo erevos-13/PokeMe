@@ -30,6 +30,11 @@ const reducer = createReducer(
     on(Actions.getPokemonsSuccess, (state, props) => {
         return adapter.setAll(props.payload, {...state, loading: false});
     }),
+    on(Actions.getMorePokemons, (state, props)=> ({...state, loading: true})),
+    on(Actions.getMorePokemonsSuccess, (state, props) => {
+        return adapter.setAll(props.payload, {...state, loading: false});
+    }),
+
     on(Actions.getPokemonsFail, (state, props) => ({ ...state, pokemons: [], error: props.error, loading: false })),
 );
 

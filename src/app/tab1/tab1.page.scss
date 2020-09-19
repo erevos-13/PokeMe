@@ -1,0 +1,39 @@
+@import "../app.component.scss";
+.tab-one-container{
+    @extend .center-vertical;
+    width: 100%;
+    .image-container{
+        height:  calculateRem(150);
+        width: auto;
+        min-width: calculateRem(180);
+        .image-pokemon{
+            height:  calculateRem(150);
+            width: auto;
+            min-width: calculateRem(180);
+        }
+    }
+    .type-container{
+        @extend .center-items-start;
+        width: 100%;
+        .type{
+            padding: 0 calculateRem(5);
+        }
+        
+    }
+}
+.load-more-container{
+    @extend .center-items;
+    .image-pokemon{
+        height: calculateRem(15);
+        width: auto;
+    }
+   
+    .load-more-text{
+        @include font-size(15,white,bold);
+        padding: calculateRem(10);
+    }
+    .icon{
+        color: white;
+    }
+}
+

@@ -1,0 +1,31 @@
+
+ion-button{
+
+    min-width: 170px;
+    --background: red;
+    --color-activate: white;
+    --background-focused: purple;
+    --background-activated-opacity: 0.5;
+    --background-focused-opacity: 0.5;
+    --background-hover-opacity: 0.5;
+    --ripple-color: purple;
+    --border-radius: 20px;
+
+}
+ion-content{
+     
+}
+
+ion-menu-button{
+    --color: red;
+}
+
+ion-back-button{
+    --color: red;
+}
+
+ion-tab-button{
+    --color-selected: red;
+    --color:gray;
+}
+

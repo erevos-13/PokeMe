@@ -1,0 +1,10 @@
+@import "../../app/app.component.scss";
+
+.main-about-container{
+    @extend .center-vertical;
+    .dev-name{
+        @include font-size(15, white, bold);
+        text-align: center;
+        padding: calculateRem(10);
+    }
+}

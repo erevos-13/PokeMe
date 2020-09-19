@@ -29,3 +29,8 @@ export const selectAllPokemon = createSelector(
     selectPokemonrState,
     pokemonFrom.selectAllPokemon
   );
+
+  export const selectByIdPokemon = createSelector(
+    selectPokemonrState,
+    (pokemonEntitys, props) =>  pokemonEntitys.entities[props.id]
+  );

@@ -1,28 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Init
-    </ion-title>
+    <ion-title> PokeMe </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div>
-    test
+  <div class="tab-one-container">
+    <ion-card *ngFor="let item of (pokemen$ | async)" (click)="onPokemon(item)" >
+      <div class="image-container">
+        <ion-img [src]="item.image" class="image-pokemon" ></ion-img>
+
+      </div>
+      <ion-card-header>
+        <ion-card-subtitle>Pokemon:</ion-card-subtitle>
+        <ion-card-title>{{item.name}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="weight">height: {{item.info.height}}</div>
+        <div class="weight">weight: {{item.info.weight}}</div>
+        
+        <div
+          class="type-container"
+          *ngIf="item.info.types as collectionInfoType"
+        >
+          <div>Type:</div>
+          <div class="type" *ngFor="let type of collectionInfoType">
+            {{type.type.name}}
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
-  <div  *ngIf="pokemen$ | async as details">
-    <li *ngFor="let item of details; let i = index">
-      <ul>{{item.name}}</ul>
-      
-    </li>
-  </div>
- 
-  <div>
-    test end
+  <div class="load-more-container" (click)="onLoadMore()">
+    <div class="load-more-text">load more</div>
+    <ion-icon name="add-circle-outline" size="large" class="icon"></ion-icon>
   </div>
 </ion-content>

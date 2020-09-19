@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [color]="'dark'" defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pokemonSelected?.name | uppercase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main-info-pokemon-page">
+  <div class="image-container">
+    <ion-img class="image-banner" [src]="pokemonSelected?.image"></ion-img>
+  </div>
+  <div class="info-container">  
+    <div class="name">{{pokemonSelected?.name}}</div>
+    <div class="stats" *ngFor="let item of pokemonSelected?.stats" >
+      <div class="stats-items">{{item.stat.name}}: {{item.base_stat}}</div>
+    </div>
+  </div>
+</ion-content>

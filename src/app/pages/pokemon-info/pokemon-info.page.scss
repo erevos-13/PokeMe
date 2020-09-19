@@ -1,0 +1,30 @@
+@import "../../app.component.scss";
+
+.main-info-pokemon-page {
+  @extend .center-vertical;
+  .image-container {
+    .image-banner {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  .info-container {
+    padding: calculateRem(10);
+    .name {
+      text-align: center;
+      @include font-size(20, white, bold);
+      padding: calculateRem(10) 0;
+    }
+    .stats{
+        @extend .center-items-start;
+        width: 100%;
+        
+        .stats-items{
+            @include font-size(12, white);
+            padding: calculateRem(1) 0;
+        }
+    }
+
+  }
+}

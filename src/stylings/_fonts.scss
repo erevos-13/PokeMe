@@ -1,0 +1,26 @@
+// @font-face {
+//     font-family: raleway;
+//     src: url("~src/assets/fonts/Raleway-VariableFont_wght.ttf") format("opentype");
+// }
+// @font-face {
+//     font-family: quicksand;
+//     src: url("~src/assets/fonts/Quicksand-VariableFont_wght.ttf") format("opentype");
+// }
+$_font_family: "Courier New", Courier, monospace;
+@function calculateRem($size) {
+    @return $size / 10 * 1rem;
+}
+@mixin font-size(
+  $size,
+  $color: $text-color-black,
+  $weight: normal,
+  $fontFamily: $_font_family
+) {
+  font-size: calculateRem($size);
+  font-weight: $weight;
+  color: $color;
+  font-family: $fontFamily !important;
+}
+@mixin set-font-family($fontFamily: $_font_family) {
+  font-family: $fontFamily !important;
+}
