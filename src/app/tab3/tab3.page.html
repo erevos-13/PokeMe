@@ -11,5 +11,11 @@
     Developer: <br>
      Orfeas Voutsaridis
   </div>
-  
+  <div class="link-used-container">
+    <div class="links" *ngFor="let item of collection" >
+      <div class="name-link">{{item.name}}</div>
+      <ion-icon class="icon" [name]="item.image"></ion-icon>
+      <a target="_blank" class="link" [href]="item.link">link</a>
+    </div>
+  </div>
 </ion-content>

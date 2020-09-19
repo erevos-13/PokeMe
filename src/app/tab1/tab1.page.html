@@ -32,7 +32,7 @@
       </ion-card-content>
     </ion-card>
   </div>
-  <div class="load-more-container" (click)="onLoadMore()">
+  <div class="load-more-container" *ngIf="pokemen$ | async as pokemon"  (click)="onLoadMore()">
     <div class="load-more-text">load more</div>
     <ion-icon name="add-circle-outline" size="large" class="icon"></ion-icon>
   </div>

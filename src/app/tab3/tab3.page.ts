@@ -7,6 +7,24 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
+  collection = [
+    {
+      name: 'GitHub',
+      image: "logo-github",
+      link: "https://github.com/erevos-13"
+    },
+    {
+      name: 'linkedin',
+      image: "logo-linkedin",
+      link: "https://www.linkedin.com/in/orfeas-voutsaridis-72b618a9"
+    },
+    {
+      name: 'webpage',
+      image: "code",
+      link: "https://voutsaridiso.com/"
+    }
+  ]
+
   constructor() {}
 
 }

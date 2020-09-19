@@ -7,4 +7,23 @@
         text-align: center;
         padding: calculateRem(10);
     }
+    .link-used-container{
+        @extend .center-vertical;
+        width: 100%;
+        padding: calculateRem(10);
+        .links{
+            @extend .center-items;
+            .name-link{
+                @include font-size(15, white);
+                padding: calculateRem(10);
+            }
+            .icon{
+                font-size: large;
+            }
+            .link{
+                @include font-size(12, white);
+                padding: calculateRem(10);
+            }
+        }
+    }
 }
